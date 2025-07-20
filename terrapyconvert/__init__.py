@@ -79,7 +79,7 @@ def to_geo(x: float, z: float) -> Tuple[float, float]:
     Returns:
         Tuple of (latitude, longitude) in degrees
     """
-    lon, lat = _scale_proj.to_geo(x, z)
+    lat, lon = _scale_proj.to_geo(x, z)
     return lat, lon
 
 
@@ -94,7 +94,7 @@ def to_geo_object(x: float, z: float) -> Dict[str, float]:
     Returns:
         Dictionary with 'lat' and 'lon' coordinates in degrees
     """
-    lon, lat = _scale_proj.to_geo(x, z)
+    lat, lon = _scale_proj.to_geo(x, z)
     return {"lat": lat, "lon": lon}
 
 

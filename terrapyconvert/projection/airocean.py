@@ -16,70 +16,70 @@ class Airocean(GeographicProjection):
     
     # Icosahedron vertices (lon, lat pairs converted to radians in __init__)
     _VERT_RAW = [
-        10.536199, 64.700000,
-        -5.245390, 2.300882,
-        58.157706, 10.447378,
-        122.300000, 39.100000,
-        -143.478490, 50.103201,
-        -67.132330, 23.717925,
-        36.521510, -50.103200,
-        112.867673, -23.717930,
-        174.754610, -2.300882,
-        -121.842290, -10.447350,
-        -57.700000, -39.100000,
-        -169.463800, -64.700000,
+        [10.536199, 64.700000],
+        [-5.245390, 2.300882],
+        [58.157706, 10.447378],
+        [122.300000, 39.100000],
+        [-143.478490, 50.103201],
+        [-67.132330, 23.717925],
+        [36.521510, -50.103200],
+        [112.867673, -23.717930],
+        [174.754610, -2.300882],
+        [-121.842290, -10.447350],
+        [-57.700000, -39.100000],
+        [-169.463800, -64.700000],
     ]
     
     # Triangle face definitions (vertex indices)
     ISO = [
-        2, 1, 6,    # 0
-        1, 0, 2,    # 1
-        0, 1, 5,    # 2
-        1, 5, 10,   # 3
-        1, 6, 10,   # 4
-        7, 2, 6,    # 5
-        2, 3, 7,    # 6
-        3, 0, 2,    # 7
-        0, 3, 4,    # 8
-        4, 0, 5,    # 9 (Quebec)
-        5, 4, 9,    # 10
-        9, 5, 10,   # 11
-        10, 9, 11,  # 12
-        11, 6, 10,  # 13
-        6, 7, 11,   # 14
-        8, 3, 7,    # 15
-        8, 3, 4,    # 16
-        8, 4, 9,    # 17
-        9, 8, 11,   # 18
-        7, 8, 11,   # 19
-        11, 6, 7,   # 20 (child of 14)
-        3, 7, 8,    # 21 (child of 15)
+        [2, 1, 6],    # 0
+        [1, 0, 2],    # 1
+        [0, 1, 5],    # 2
+        [1, 5, 10],   # 3
+        [1, 6, 10],   # 4
+        [7, 2, 6],    # 5
+        [2, 3, 7],    # 6
+        [3, 0, 2],    # 7
+        [0, 3, 4],    # 8
+        [4, 0, 5],    # 9 (Quebec)
+        [5, 4, 9],    # 10
+        [9, 5, 10],   # 11
+        [10, 9, 11],  # 12
+        [11, 6, 10],  # 13
+        [6, 7, 11],   # 14
+        [8, 3, 7],    # 15
+        [8, 3, 4],    # 16
+        [8, 4, 9],    # 17
+        [9, 8, 11],   # 18
+        [7, 8, 11],   # 19
+        [11, 6, 7],   # 20 (child of 14)
+        [3, 7, 8],    # 21 (child of 15)
     ]
     
     # 2D map centers
     CENTER_MAP_RAW = [
-        -3, 7,   # 0
-        -2, 5,   # 1
-        -1, 7,   # 2
-        2, 5,    # 3
-        4, 5,    # 4
-        -4, 1,   # 5
-        -3, -1,  # 6
-        -2, 1,   # 7
-        -1, -1,  # 8
-        0, 1,    # 9
-        1, -1,   # 10
-        2, 1,    # 11
-        3, -1,   # 12
-        4, 1,    # 13
-        5, -1,   # 14 (left side, right to be cut)
-        -3, -5,  # 15
-        -1, -5,  # 16
-        1, -5,   # 17
-        2, -7,   # 18
-        -4, -7,  # 19
-        -5, -5,  # 20 (pseudo triangle, child of 14)
-        -2, -7,  # 21 (pseudo triangle, child of 15)
+        [-3, 7],   # 0
+        [-2, 5],   # 1
+        [-1, 7],   # 2
+        [2, 5],    # 3
+        [4, 5],    # 4
+        [-4, 1],   # 5
+        [-3, -1],  # 6
+        [-2, 1],   # 7
+        [-1, -1],  # 8
+        [0, 1],    # 9
+        [1, -1],   # 10
+        [2, 1],    # 11
+        [3, -1],   # 12
+        [4, 1],    # 13
+        [5, -1],   # 14 (left side, right to be cut)
+        [-3, -5],  # 15
+        [-1, -5],  # 16
+        [1, -5],   # 17
+        [2, -7],   # 18
+        [-4, -7],  # 19
+        [-5, -5],  # 20 (pseudo triangle, child of 14)
+        [-2, -7],  # 21 (pseudo triangle, child of 15)
     ]
     
     # Triangle flip flags
@@ -92,9 +92,9 @@ class Airocean(GeographicProjection):
     
     # Face grid for fast triangle lookup
     FACE_ON_GRID = [
-        -1, -1, 0, 1, 2, -1, -1, 3, -1, 4, -1,
-        -1, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
-        20, 19, 15, 21, 16, -1, 17, 18, -1, -1, -1,
+        [-1, -1, 0, 1, 2, -1, -1, 3, -1, 4, -1],
+        [-1, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+        [20, 19, 15, 21, 16, -1, 17, 18, -1, -1, -1],
     ]
     
     # Mathematical constants for triangle transform
@@ -118,30 +118,30 @@ class Airocean(GeographicProjection):
     def _initialize_vertices(self):
         """Initialize vertex coordinates in radians."""
         self.VERT = []
-        for i in range(0, len(self._VERT_RAW), 2):
-            lon = self._VERT_RAW[i] * self.TO_RADIANS
-            lat = (90 - self._VERT_RAW[i + 1]) * self.TO_RADIANS
-            self.VERT.extend([lon, lat])
+        for vertex in self._VERT_RAW:
+            lon = vertex[0] * self.TO_RADIANS
+            lat = (90 - vertex[1]) * self.TO_RADIANS
+            self.VERT.append([lon, lat])
     
     def _initialize_centers(self):
         """Initialize 2D map centers."""
         self.CENTER_MAP = []
-        for i in range(0, len(self.CENTER_MAP_RAW), 2):
-            x = self.CENTER_MAP_RAW[i] * 0.5 * self.ARC
-            y = self.CENTER_MAP_RAW[i + 1] * self.ARC * self.ROOT3 / 12
-            self.CENTER_MAP.extend([x, y])
+        for center in self.CENTER_MAP_RAW:
+            x = center[0] * 0.5 * self.ARC
+            y = center[1] * self.ARC * self.ROOT3 / 12
+            self.CENTER_MAP.append([x, y])
     
     def _initialize_matrices(self):
         """Initialize rotation matrices for each triangle face."""
-        self.CENTROID = [0.0] * 66  # 22 faces * 3 coords
-        self.ROTATION_MATRIX = [0.0] * 198  # 22 faces * 9 elements
-        self.INVERSE_ROTATION_MATRIX = [0.0] * 198
+        self.CENTROID = [[0.0, 0.0, 0.0] for _ in range(22)]  # 22 faces * 3 coords
+        self.ROTATION_MATRIX = [[[0.0 for _ in range(3)] for _ in range(3)] for _ in range(22)]  # 22 faces * 3x3 matrices
+        self.INVERSE_ROTATION_MATRIX = [[[0.0 for _ in range(3)] for _ in range(3)] for _ in range(22)]
         
         for i in range(22):
             # Get triangle vertices
-            a = self._cart(self.VERT[2 * self.ISO[i * 3]], self.VERT[2 * self.ISO[i * 3] + 1])
-            b = self._cart(self.VERT[2 * self.ISO[i * 3 + 1]], self.VERT[2 * self.ISO[i * 3 + 1] + 1])
-            c = self._cart(self.VERT[2 * self.ISO[i * 3 + 2]], self.VERT[2 * self.ISO[i * 3 + 2] + 1])
+            a = self._cart(self.VERT[self.ISO[i][0]][0], self.VERT[self.ISO[i][0]][1])
+            b = self._cart(self.VERT[self.ISO[i][1]][0], self.VERT[self.ISO[i][1]][1])
+            c = self._cart(self.VERT[self.ISO[i][2]][0], self.VERT[self.ISO[i][2]][1])
             
             # Calculate centroid
             x_sum = a[0] + b[0] + c[0]
@@ -150,20 +150,20 @@ class Airocean(GeographicProjection):
             
             mag = math.sqrt(x_sum * x_sum + y_sum * y_sum + z_sum * z_sum)
             
-            self.CENTROID[3 * i] = x_sum / mag
-            self.CENTROID[3 * i + 1] = y_sum / mag
-            self.CENTROID[3 * i + 2] = z_sum / mag
+            self.CENTROID[i][0] = x_sum / mag
+            self.CENTROID[i][1] = y_sum / mag
+            self.CENTROID[i][2] = z_sum / mag
             
             # Calculate rotation angles
             c_lon = math.atan2(y_sum, x_sum)
             c_lat = math.atan2(math.sqrt(x_sum * x_sum + y_sum * y_sum), z_sum)
             
             # Rotate first vertex to determine final rotation
-            v = self._y_rot(self.VERT[2 * self.ISO[i * 3]] - c_lon, self.VERT[2 * self.ISO[i * 3] + 1], -c_lat)
+            v = self._y_rot(self.VERT[self.ISO[i][0]][0] - c_lon, self.VERT[self.ISO[i][0]][1], -c_lat)
             
             # Create rotation matrices
-            self._produce_zyz_rotation_matrix(self.ROTATION_MATRIX, i * 9, -c_lon, -c_lat, (math.pi / 2) - v[0])
-            self._produce_zyz_rotation_matrix(self.INVERSE_ROTATION_MATRIX, i * 9, v[0] - (math.pi / 2), c_lat, c_lon)
+            self._produce_zyz_rotation_matrix(self.ROTATION_MATRIX[i], -c_lon, -c_lat, (math.pi / 2) - v[0])
+            self._produce_zyz_rotation_matrix(self.INVERSE_ROTATION_MATRIX[i], v[0] - (math.pi / 2), c_lat, c_lon)
     
     @staticmethod
     def _cart(longitude: float, phi: float) -> Tuple[float, float, float]:
@@ -190,7 +190,7 @@ class Airocean(GeographicProjection):
         )
     
     @staticmethod
-    def _produce_zyz_rotation_matrix(out: List[float], offset: int, a: float, b: float, c: float):
+    def _produce_zyz_rotation_matrix(out: List[List[float]], a: float, b: float, c: float):
         """Produce ZYZ rotation matrix."""
         sin_a = math.sin(a)
         cos_a = math.cos(a)
@@ -199,17 +199,17 @@ class Airocean(GeographicProjection):
         sin_c = math.sin(c)
         cos_c = math.cos(c)
         
-        out[offset] = cos_a * cos_b * cos_c - sin_c * sin_a
-        out[offset + 1] = -sin_a * cos_b * cos_c - sin_c * cos_a
-        out[offset + 2] = cos_c * sin_b
+        out[0][0] = cos_a * cos_b * cos_c - sin_c * sin_a
+        out[0][1] = -sin_a * cos_b * cos_c - sin_c * cos_a
+        out[0][2] = cos_c * sin_b
         
-        out[offset + 3] = sin_c * cos_b * cos_a + cos_c * sin_a
-        out[offset + 4] = cos_c * cos_a - sin_c * cos_b * sin_a
-        out[offset + 5] = sin_c * sin_b
+        out[1][0] = sin_c * cos_b * cos_a + cos_c * sin_a
+        out[1][1] = cos_c * cos_a - sin_c * cos_b * sin_a
+        out[1][2] = sin_c * sin_b
         
-        out[offset + 6] = -sin_b * cos_a
-        out[offset + 7] = sin_b * sin_a
-        out[offset + 8] = cos_b
+        out[2][0] = -sin_b * cos_a
+        out[2][1] = sin_b * sin_a
+        out[2][2] = cos_b
     
     def _find_triangle(self, x: float, y: float, z: float) -> int:
         """Find the triangle face closest to the given 3D point."""
@@ -217,9 +217,9 @@ class Airocean(GeographicProjection):
         face = 0
         
         for i in range(20):
-            x_d = self.CENTROID[3 * i] - x
-            y_d = self.CENTROID[3 * i + 1] - y
-            z_d = self.CENTROID[3 * i + 2] - z
+            x_d = self.CENTROID[i][0] - x
+            y_d = self.CENTROID[i][1] - y
+            z_d = self.CENTROID[i][2] - z
             
             dist_sq = x_d * x_d + y_d * y_d + z_d * z_d
             if dist_sq < min_dist:
@@ -264,7 +264,7 @@ class Airocean(GeographicProjection):
         if col < 0 or col >= 11:
             return -1
         
-        return cls.FACE_ON_GRID[row * 11 + col]
+        return cls.FACE_ON_GRID[row][col]
     
     def _triangle_transform(self, x: float, y: float, z: float) -> Tuple[float, float]:
         """Transform 3D coordinates to 2D triangle coordinates."""
@@ -336,16 +336,16 @@ class Airocean(GeographicProjection):
         face = self._find_triangle(x, y, z)
         
         # Apply rotation matrix
-        off = 9 * face
-        x_p = (x * self.ROTATION_MATRIX[off] + 
-               y * self.ROTATION_MATRIX[off + 1] + 
-               z * self.ROTATION_MATRIX[off + 2])
-        y_p = (x * self.ROTATION_MATRIX[off + 3] + 
-               y * self.ROTATION_MATRIX[off + 4] + 
-               z * self.ROTATION_MATRIX[off + 5])
-        z_p = (x * self.ROTATION_MATRIX[off + 6] + 
-               y * self.ROTATION_MATRIX[off + 7] + 
-               z * self.ROTATION_MATRIX[off + 8])
+        rotation_matrix = self.ROTATION_MATRIX[face]
+        x_p = (x * rotation_matrix[0][0] + 
+               y * rotation_matrix[0][1] + 
+               z * rotation_matrix[0][2])
+        y_p = (x * rotation_matrix[1][0] + 
+               y * rotation_matrix[1][1] + 
+               z * rotation_matrix[1][2])
+        z_p = (x * rotation_matrix[2][0] + 
+               y * rotation_matrix[2][1] + 
+               z * rotation_matrix[2][2])
         
         out_x, out_y = self._triangle_transform(x_p, y_p, z_p)
         
@@ -362,8 +362,8 @@ class Airocean(GeographicProjection):
             face += 6  # shift 14->20 & 15->21
         
         # Apply center offset
-        out_x += self.CENTER_MAP[face * 2]
-        out_y += self.CENTER_MAP[face * 2 + 1]
+        out_x += self.CENTER_MAP[face][0]
+        out_y += self.CENTER_MAP[face][1]
         
         return (out_x, out_y)
     
@@ -375,8 +375,8 @@ class Airocean(GeographicProjection):
             return self.OUT_OF_BOUNDS
         
         # Remove center offset
-        x -= self.CENTER_MAP[face * 2]
-        y -= self.CENTER_MAP[face * 2 + 1]
+        x -= self.CENTER_MAP[face][0]
+        y -= self.CENTER_MAP[face][1]
         
         # Check bounds for special faces
         if face == 14 and x > 0:
@@ -397,16 +397,16 @@ class Airocean(GeographicProjection):
         x_3d, y_3d, z_3d = self._inverse_triangle_transform(x, y)
         
         # Apply inverse rotation matrix
-        off = 9 * face
-        x_p = (x_3d * self.INVERSE_ROTATION_MATRIX[off] + 
-               y_3d * self.INVERSE_ROTATION_MATRIX[off + 1] + 
-               z_3d * self.INVERSE_ROTATION_MATRIX[off + 2])
-        y_p = (x_3d * self.INVERSE_ROTATION_MATRIX[off + 3] + 
-               y_3d * self.INVERSE_ROTATION_MATRIX[off + 4] + 
-               z_3d * self.INVERSE_ROTATION_MATRIX[off + 5])
-        z_p = (x_3d * self.INVERSE_ROTATION_MATRIX[off + 6] + 
-               y_3d * self.INVERSE_ROTATION_MATRIX[off + 7] + 
-               z_3d * self.INVERSE_ROTATION_MATRIX[off + 8])
+        inverse_rotation_matrix = self.INVERSE_ROTATION_MATRIX[face]
+        x_p = (x_3d * inverse_rotation_matrix[0][0] + 
+               y_3d * inverse_rotation_matrix[0][1] + 
+               z_3d * inverse_rotation_matrix[0][2])
+        y_p = (x_3d * inverse_rotation_matrix[1][0] + 
+               y_3d * inverse_rotation_matrix[1][1] + 
+               z_3d * inverse_rotation_matrix[1][2])
+        z_p = (x_3d * inverse_rotation_matrix[2][0] + 
+               y_3d * inverse_rotation_matrix[2][1] + 
+               z_3d * inverse_rotation_matrix[2][2])
         
         # Convert to geographic coordinates
         lon = math.atan2(y_p, x_p) / self.TO_RADIANS
