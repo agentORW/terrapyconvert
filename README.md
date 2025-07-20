@@ -2,7 +2,7 @@
 
 A Python package for converting geographic coordinates to Minecraft coordinates and vice versa for the BuildTheEarth (BTE) project.
 
-This is a Python port of the TypeScript terraconvert package, designed to provide clean, pythonic APIs for coordinate conversion.
+This is a Python port of the TypeScript [terraconvert](https://github.com/Nachwahl/terraconvert/tree/9285b5f3d50b3cf0718b7a0e8e29b8eab1eb9163) package, designed to provide clean, pythonic APIs for coordinate conversion.
 
 ## Installation
 
