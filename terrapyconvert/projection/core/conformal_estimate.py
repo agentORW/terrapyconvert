@@ -2,8 +2,8 @@
 Conformal estimate projection.
 """
 from .airocean import Airocean
-from .invertable_vector_field import InvertableVectorField
-from .resources.conformal import get_conformal_json
+from ..utils.invertable_vector_field import InvertableVectorField
+from ..data.conformal import get_conformal_json
 from typing import Tuple
 import math
 

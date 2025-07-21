@@ -38,29 +38,13 @@ def load_conformal_data() -> List[List[float]]:
                         data = json.loads(decoded)
                         print(f"Loaded {len(data)} conformal correction points from base64")
                         return data
-                    except:
-                        print("Warning: Could not decode base64 conformal data")
+                    except Exception as decode_error:
+                        raise ValueError(f"Could not decode base64 conformal data: {decode_error}")
                         
         except Exception as e:
-            print(f"Warning: Could not load conformal data: {e}")
+            raise IOError(f"Failed to load conformal data from {conformal_file}: {e}")
     else:
-        print("Warning: conformal.txt not found, using dummy data")
-    
-    # Return dummy identity data if no conformal file available
-    print("Using dummy conformal data - results will not be accurate")
-    side_length = 256
-    dummy_data = []
-    
-    counter = 0
-    for v in range(side_length + 1):
-        for u in range(side_length + 1 - v):
-            # Create dummy coordinates that approximate the original pattern
-            x_coord = (u / side_length - 0.5) * 0.8
-            y_coord = (v / side_length - 0.3) * 0.8
-            dummy_data.append([x_coord, y_coord])
-            counter += 1
-    
-    return dummy_data
+        raise FileNotFoundError(f"Required conformal correction file not found: {conformal_file}")
 
 
 def get_conformal_json() -> List[List[float]]:

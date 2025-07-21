@@ -1,8 +1,8 @@
 """
 Upright orientation transformation.
 """
-from .projection_transform import ProjectionTransform
-from .geographic_projection import GeographicProjection
+from ..base.projection_transform import ProjectionTransform
+from ..base.geographic_projection import GeographicProjection
 from typing import List, Tuple
 
 

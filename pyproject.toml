@@ -7,14 +7,13 @@ name = "terrapyconvert"
 version = "1.0.0"
 description = "Convert Lat, Lon to Minecraft coordinates and vice verca in BTE worlds"
 readme = "README.md"
-license = {text = "MIT"}
+license = "MIT"
 authors = [
     {name = "agentORW"}
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.8",
@@ -45,16 +44,24 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/your-username/terrapyconvert"
-Repository = "https://github.com/your-username/terrapyconvert"
-Issues = "https://github.com/your-username/terrapyconvert/issues"
-Documentation = "https://github.com/your-username/terrapyconvert#readme"
+Homepage = "https://github.com/agentORW/terrapyconvert"
+Repository = "https://github.com/agentORW/terrapyconvert"
+Issues = "https://github.com/agentORW/terrapyconvert/issues"
+Documentation = "https://github.com/agentORW/terrapyconvert#readme"
 
 [tool.setuptools]
-packages = ["terrapyconvert", "terrapyconvert.projection", "terrapyconvert.projection.resources"]
+packages = [
+    "terrapyconvert", 
+    "terrapyconvert.projection",
+    "terrapyconvert.projection.base",
+    "terrapyconvert.projection.core", 
+    "terrapyconvert.projection.data",
+    "terrapyconvert.projection.transforms",
+    "terrapyconvert.projection.utils"
+]
 
 [tool.setuptools.package-data]
-"terrapyconvert.projection.resources" = ["*.txt"]
+"terrapyconvert.projection.data" = ["*.txt"]
 
 [tool.black]
 line-length = 88

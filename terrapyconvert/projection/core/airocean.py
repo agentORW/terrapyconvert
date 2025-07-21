@@ -1,7 +1,7 @@
 """
 Airocean projection implementation.
 """
-from .geographic_projection import GeographicProjection
+from ..base.geographic_projection import GeographicProjection
 from typing import List, Tuple
 import math
 
