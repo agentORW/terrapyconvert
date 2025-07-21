@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "terrapyconvert"
-version = "1.0.0"
+version = "1.0.1"
 description = "Convert Lat, Lon to Minecraft coordinates and vice verca in BTE worlds"
 readme = "README.md"
 license = "MIT"
