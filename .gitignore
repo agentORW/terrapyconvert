@@ -147,5 +147,4 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
-examples.py
 install.py
